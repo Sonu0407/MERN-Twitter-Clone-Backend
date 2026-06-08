@@ -31,10 +31,7 @@ app.use(cookieParser());
 // middleware to clear cors error
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://twitter-clone-sonu.vercel.app/login",
-    ],
+    origin: ["http://localhost:5173", "https://twitter-clone-sonu.vercel.app"],
     credentials: true,
     exposedHeaders: ["set-cookie"],
   }),
