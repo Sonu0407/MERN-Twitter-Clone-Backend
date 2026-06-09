@@ -9,11 +9,15 @@ const protectRoute = async (req, res, next) => {
 
     // console.log(req.cookies.jwt);
 
+    console.log("JWT token:", token);
+
     if (!token) {
       return res.status(401).json({ error: "You need to login first" });
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    console.log("Decoded:", decoded);
 
     if (!decoded) {
       return res.status(401).json({ error: "Unauthorized: Invalid Token" });
